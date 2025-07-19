@@ -235,21 +235,21 @@ export const getContactByDBBulk = async (req, res, next) => {
 
 export const getContactsByPdfTST = async (req, res, next) => {
   try {
-    const apiKey = req.headers["x-api-key"];
+    // const apiKey = req.headers["x-api-key"];
 
-    if (!apiKey) {
-      return res.status(401).json({ error: "API key required" });
-    }
+    // if (!apiKey) {
+    //   return res.status(401).json({ error: "API key required" });
+    // }
 
-    const user = await User.findOne({ apiKey });
+    // const user = await User.findOne({ apiKey });
 
-    if (!user) {
-      return res.status(403).json({ error: "Invalid API key" });
-    }
-    req.user = user; // attach user to the request
+    // if (!user) {
+    //   return res.status(403).json({ error: "Invalid API key" });
+    // }
+    // req.user = user; // attach user to the request
     const { number, proprety } = req.body;
-    console.log(proprety);
-    if (!req.file) return next(new AppError("❌ PDF file missing", 400));
+    // console.log(proprety);
+    // if (!req.file) return next(new AppError("❌ PDF file missing", 400));
 
     let propertyObj;
     try {
